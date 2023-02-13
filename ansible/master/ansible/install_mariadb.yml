@@ -1,12 +1,12 @@
 ---
-- host: db
-  task:
-    - name: Install MariaDB
-      apt: 
-        name: mariadb-server
-        state: present
-        update_cache: yes
-      become: true
-
+- name: Install MariaDB Server
+  hosts: db
+  become: yes
+  tasks:
+  - name: Install the MariaDB server package
+    apt: 
+      name: mariadb-server
+      state: present
+      update_cache: yes
 
 
